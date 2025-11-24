@@ -101,7 +101,7 @@ def get_lags_for_freq(freq_str: str):
         raise NotImplementedError(
             "Lags for freq multiple > 1 are not implemented yet."
         )
-    if offset.name == "H":
+    if offset.name == "H" or offset.name == "h":
         lags_seq = [24 * i for i in [1, 2, 3, 4, 5, 6, 7, 14, 21, 28]]
     elif offset.name == "D" or offset.name == "B":
         # TODO: Fix lags for B

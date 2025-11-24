@@ -7,4 +7,4 @@ init_skip: false
 prediction_length: 24
 scaling_type: mean
 use_features: false
-use_lags: true
+use_lags: false #true

@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "TSDiff: An Unconditional Diffusion Model for Time Series"
 authors = []
 dependencies = [
-    "torch~=1.13.1",
+    "torch>=2.2.0",
     "pytorch-lightning~=1.9.4",
     "gluonts[mxnet,pro]~=0.12.3",
     "matplotlib",

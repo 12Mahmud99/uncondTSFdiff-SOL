@@ -4,6 +4,7 @@ import logging
 import argparse
 from pathlib import Path
 
+import pykeops
 import yaml
 import torch
 from tqdm.auto import tqdm
@@ -29,6 +30,8 @@ from uncond_ts_diff.utils import (
     filter_metrics,
     MaskInput,
 )
+pykeops.config.device = "cpu"
+pykeops.config.backend = "CPU"
 
 guidance_map = {"ddpm": DDPMGuidance, "ddim": DDIMGuidance}
 
@@ -207,13 +210,13 @@ def main(config, log_dir):
     )
 
     callbacks.append(checkpoint_callback)
-    callbacks.append(RichProgressBar())
+    #callbacks.append(RichProgressBar())
 
     trainer = pl.Trainer(
         accelerator="gpu" if torch.cuda.is_available() else None,
         devices=[int(config["device"].split(":")[-1])],
         max_epochs=config["max_epochs"],
-        enable_progress_bar=True,
+        enable_progress_bar=False,
         num_sanity_val_steps=0,
         callbacks=callbacks,
         default_root_dir=log_dir,
