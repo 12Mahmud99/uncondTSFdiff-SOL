@@ -1,4 +1,4 @@
-ckpt: dummy/path.ckpt
+ckpt: lightning_logs/version_uber/best_checkpoint.ckpt
 context_length: 336
 dataset: uber_tlc_hourly
 device: cuda:0
