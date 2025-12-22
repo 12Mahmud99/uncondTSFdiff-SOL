@@ -109,7 +109,7 @@ plt.ylabel("Value")
 plt.legend()
 #plt.ylim(-200,250)
 plt.tight_layout()
-#plt.xlim(3900,4000)
+plt.xlim(5900,6100)
 plt.savefig("exchange_forecast.png", dpi=150)
 plt.close()
 
